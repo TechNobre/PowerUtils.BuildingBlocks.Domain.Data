@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.project", "1.project", "{7D601018-8B25-47C0-B6C5-87F12614B120}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		CHANGELOG.md = CHANGELOG.md
+		global.json = global.json
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.cicd", "2.cicd", "{ED4B5CEE-8E7B-4674-9564-9140DEFDF48D}"
+	ProjectSection(SolutionItems) = preProject
+		.github\dependabot.yml = .github\dependabot.yml
+		.github\workflows\publish-nuget.yml = .github\workflows\publish-nuget.yml
+		.github\workflows\sonarcloud.yml = .github\workflows\sonarcloud.yml
+		.github\workflows\test-project.yml = .github\workflows\test-project.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.src", "3.src", "{DF208674-3776-400E-8023-5A7EDDB3233A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerUtils.BuildingBlocks.Domain.Data", "src\PowerUtils.BuildingBlocks.Domain.Data.csproj", "{23BDCF39-FC0E-4292-BCD4-D4D414C42676}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23BDCF39-FC0E-4292-BCD4-D4D414C42676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23BDCF39-FC0E-4292-BCD4-D4D414C42676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23BDCF39-FC0E-4292-BCD4-D4D414C42676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23BDCF39-FC0E-4292-BCD4-D4D414C42676}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{23BDCF39-FC0E-4292-BCD4-D4D414C42676} = {DF208674-3776-400E-8023-5A7EDDB3233A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2FE2FF8-6C33-49F1-A928-A0200C91A36C}
+	EndGlobalSection
+EndGlobal
