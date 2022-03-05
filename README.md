@@ -6,7 +6,7 @@ Provides standard repositories for working with entities
 
 [![NuGet](https://img.shields.io/nuget/v/PowerUtils.BuildingBlocks.Domain.Data.svg)](https://www.nuget.org/packages/PowerUtils.BuildingBlocks.Domain.Data)
 [![Nuget](https://img.shields.io/nuget/dt/PowerUtils.BuildingBlocks.Domain.Data.svg)](https://www.nuget.org/packages/PowerUtils.BuildingBlocks.Domain.Data)
-[![License: MIT](https://img.shields.io/github/license/ofpinewood/http-exceptions.svg)](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/github/license/TechNobre/PowerUtils.BuildingBlocks.Domain.Data.svg)](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/blob/main/LICENSE)
 
 
 
