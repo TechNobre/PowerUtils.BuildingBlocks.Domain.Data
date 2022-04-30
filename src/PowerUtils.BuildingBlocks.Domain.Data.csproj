@@ -3,6 +3,8 @@
   <PropertyGroup>
     <ProjectGuid>23bdcf39-fc0e-4292-bcd4-d4d414c42676</ProjectGuid>
 
+    <CurrentYear>$([System.DateTime]::UtcNow.ToString(yyyy))</CurrentYear>
+
     <!-- Assembly and projecto details -->
     <!-- https://docs.microsoft.com/en-us/dotnet/standard/frameworks -->
     <TargetFrameworks>net6.0;net5.0;netstandard2.1;netcoreapp3.1</TargetFrameworks>
@@ -22,12 +24,10 @@
 
     <License>MIT</License>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Copyright>Copyright © 2022 by TechNobre</Copyright>
+    <Copyright>Copyright © $(CurrentYear) by TechNobre</Copyright>
 
     <Description>Provides standard repositories for working with entities.</Description>
-    <PackageReleaseNotes>
-      Start project
-    </PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/blob/main/CHANGELOG.md</PackageReleaseNotes>
     <Summary>Provides standard repositories for working with entities.</Summary>
     <PackageTags>PowerUtils;Utils;Helpers;DDD;CleanArchitecture;Data;DataBase;Domain;Repository;Repositories</PackageTags>
     <RepositoryUrl>https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data</RepositoryUrl>
@@ -59,23 +59,9 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <DefineConstants>RELEASE;TRACE</DefineConstants>
+    <DefineConstants>RELEASE</DefineConstants>
     <ErrorReport>none</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
-    <DefineConstants>NETSTANDARD;NETSTANDARD2_1</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
-    <DefineConstants>NETCOREAPP;NETCOREAPP3_1</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net5.0' ">
-    <DefineConstants>NET;NET5</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
-    <DefineConstants>NET;NET6</DefineConstants>
   </PropertyGroup>
 
 
