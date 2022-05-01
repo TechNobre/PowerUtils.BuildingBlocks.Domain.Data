@@ -1,6 +1,4 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using PowerUtils.BuildingBlocks.Domain;
+﻿using PowerUtils.BuildingBlocks.Domain;
 
 namespace PowerUtils.BuildingBlocks.Data.Repositories
 {
@@ -9,6 +7,6 @@ namespace PowerUtils.BuildingBlocks.Data.Repositories
 
         where TEntity : IAggregateRoot<TId>
     {
-        Task<TId> AddAsync(TEntity entity, CancellationToken cancellationToken = default);
+        TId Add(TEntity entity);
     }
 }

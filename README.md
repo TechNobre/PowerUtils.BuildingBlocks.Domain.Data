@@ -6,7 +6,7 @@ Provides standard repositories for working with entities
 
 [![NuGet](https://img.shields.io/nuget/v/PowerUtils.BuildingBlocks.Domain.Data.svg)](https://www.nuget.org/packages/PowerUtils.BuildingBlocks.Domain.Data)
 [![Nuget](https://img.shields.io/nuget/dt/PowerUtils.BuildingBlocks.Domain.Data.svg)](https://www.nuget.org/packages/PowerUtils.BuildingBlocks.Domain.Data)
-[![License: MIT](https://img.shields.io/github/license/ofpinewood/http-exceptions.svg)](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/github/license/TechNobre/PowerUtils.BuildingBlocks.Domain.Data.svg)](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/blob/main/LICENSE)
 
 
 
@@ -18,6 +18,18 @@ Provides standard repositories for working with entities
 
 ## Features
 
+- [AsyncInterfaces](#AsyncInterfaces)
+  - [IEntityAsyncRepositoryBase](#AsyncInterfaces.IEntityAsyncRepositoryBase)
+  - [IAddAsyncRepositoryBase](#AsyncInterfaces.IAddAsyncRepositoryBase)
+  - [IUpdateAsyncRepositoryBase](#AsyncInterfaces.IUpdateAsyncRepositoryBase)
+  - [IDeleteAsyncRepositoryBase](#AsyncInterfaces.IDeleteAsyncRepositoryBase)
+  - [IGetAsyncRepositoryBase](#AsyncInterfaces.IGetAsyncRepositoryBase)
+  - [IListAsyncRepositoryBase](#AsyncInterfaces.IListAsyncRepositoryBase)
+  - [ICountAsyncRepositoryBase](#AsyncInterfaces.ICountAsyncRepositoryBase)
+  - [IAnyAsyncRepositoryBase](#AsyncInterfaces.IAnyAsyncRepositoryBase)
+  - [IPersistentAsyncRepositoryBase](#AsyncInterfaces.IPersistentAsyncRepositoryBase)
+  - [ICRUDAsyncRepositoryBase](#AsyncInterfaces.ICRUDAsyncRepositoryBase)
+  - [IReadAsyncRepositoryBase](#AsyncInterfaces.IReadAsyncRepositoryBase)
 - [Interfaces](#Interfaces)
   - [IEntityRepositoryBase](#Interfaces.IEntityRepositoryBase)
   - [IAddRepositoryBase](#Interfaces.IAddRepositoryBase)
@@ -58,7 +70,122 @@ dotnet add package PowerUtils.BuildingBlocks.Domain.Data
 
 
 
+### AsyncInterfaces <a name="AsyncInterfaces"></a>
+**namespace:** `PowerUtils.BuildingBlocks.Data.AsyncRepositories`
+
+
+#### IEntityAsyncRepositoryBase <a name="AsyncInterfaces.IEntityAsyncRepositoryBase"></a>
+
+```csharp
+public interface IEntityAsyncRepositoryBase<TEntity, TId> :
+    IRepositoryBase
+
+    where TEntity : IAggregateRoot<TId>
+{ }
+```
+
+
+#### IAddAsyncRepositoryBase <a name="AsyncInterfaces.IAddAsyncRepositoryBase"></a>
+
+```csharp
+Task<TId> AddAsync(TEntity entity, CancellationToken cancellationToken = default);
+```
+
+
+#### IUpdateAsyncRepositoryBase <a name="AsyncInterfaces.IUpdateAsyncRepositoryBase"></a>
+
+```csharp
+Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
+```
+
+
+#### IDeleteAsyncRepositoryBase <a name="AsyncInterfaces.IDeleteAsyncRepositoryBase"></a>
+
+```csharp
+Task DeleteAsync(TId id, CancellationToken cancellationToken = default);
+```
+
+
+#### IGetAsyncRepositoryBase <a name="AsyncInterfaces.IGetAsyncRepositoryBase"></a>
+
+```csharp
+Task<TEntity> GetByIdAsync(TId id, CancellationToken cancellationToken = default);
+```
+
+
+#### IListAsyncRepositoryBase <a name="AsyncInterfaces.IListAsyncRepositoryBase"></a>
+
+```csharp
+Task<IEnumerable<TEntity>> ListAsync(CancellationToken cancellationToken = default);
+```
+
+
+#### ICountAsyncRepositoryBase <a name="AsyncInterfaces.ICountAsyncRepositoryBase"></a>
+
+```csharp
+Task<long> CountAsync(CancellationToken cancellationToken = default);
+```
+
+
+#### IAnyAsyncRepositoryBase <a name="AsyncInterfaces.IAnyAsyncRepositoryBase"></a>
+
+```csharp
+Task<bool> AnyAsync(TId id, CancellationToken cancellationToken = default);
+```
+
+
+#### IPersistentAsyncRepositoryBase <a name="AsyncInterfaces.IPersistentAsyncRepositoryBase"></a>
+
+```csharp
+public interface IPersistentAsyncRepositoryBase<TEntity, TId> :
+    IEntityAsyncRepositoryBase<TEntity, TId>,
+
+    IAddAsyncRepositoryBase<TEntity, TId>,
+    IUpdateAsyncRepositoryBase<TEntity, TId>,
+    IDeleteAsyncRepositoryBase<TEntity, TId>
+
+    where TEntity : IAggregateRoot<TId>
+{
+    Task<TId> AddOrUpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
+}
+```
+
+
+#### ICRUDAsyncRepositoryBase <a name="AsyncInterfaces.ICRUDAsyncRepositoryBase"></a>
+
+```csharp
+public interface ICRUDAsyncRepositoryBase<TEntity, TId> :
+    IEntityAsyncRepositoryBase<TEntity, TId>,
+
+    IAddAsyncRepositoryBase<TEntity, TId>,
+    IGetAsyncRepositoryBase<TEntity, TId>,
+    IUpdateAsyncRepositoryBase<TEntity, TId>,
+    IDeleteAsyncRepositoryBase<TEntity, TId>
+
+    where TEntity : IAggregateRoot<TId>
+{ }
+```
+
+
+#### IReadAsyncRepositoryBase <a name="AsyncInterfaces.IReadAsyncRepositoryBase"></a>
+
+```csharp
+public interface IReadAsyncRepositoryBase<TEntity, TId> :
+    IEntityAsyncRepositoryBase<TEntity, TId>,
+
+    IGetAsyncRepositoryBase<TEntity, TId>,
+    IListAsyncRepositoryBase<TEntity, TId>,
+    ICountAsyncRepositoryBase<TEntity, TId>,
+    IAnyAsyncRepositoryBase<TEntity, TId>
+
+    where TEntity : IAggregateRoot<TId>
+{ }
+```
+
+
+
 ### Interfaces <a name="Interfaces"></a>
+**namespace:** `PowerUtils.BuildingBlocks.Data.Repositories`
 
 
 #### IEntityRepositoryBase <a name="Interfaces.IEntityRepositoryBase"></a>
@@ -75,49 +202,49 @@ public interface IEntityRepositoryBase<TEntity, TId> :
 #### IAddRepositoryBase <a name="Interfaces.IAddRepositoryBase"></a>
 
 ```csharp
-Task<TId> AddAsync(TEntity entity, CancellationToken cancellationToken = default);
+TId Add(TEntity entity);
 ```
 
 
 #### IUpdateRepositoryBase <a name="Interfaces.IUpdateRepositoryBase"></a>
 
 ```csharp
-Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
+void Update(TEntity entity);
 ```
 
 
 #### IDeleteRepositoryBase <a name="Interfaces.IDeleteRepositoryBase"></a>
 
 ```csharp
-Task DeleteAsync(TId id, CancellationToken cancellationToken = default);
+void Delete(TId id);
 ```
 
 
 #### IGetRepositoryBase <a name="Interfaces.IGetRepositoryBase"></a>
 
 ```csharp
-Task<TEntity> GetByIdAsync(TId id, CancellationToken cancellationToken = default);
+TEntity GetById(TId id);
 ```
 
 
 #### IListRepositoryBase <a name="Interfaces.IListRepositoryBase"></a>
 
 ```csharp
-Task<IEnumerable<TEntity>> ListAsync(CancellationToken cancellationToken = default);
+IEnumerable<TEntity> List();
 ```
 
 
 #### ICountRepositoryBase <a name="Interfaces.ICountRepositoryBase"></a>
 
 ```csharp
-Task<long> CountAsync(CancellationToken cancellationToken = default);
+long Count();
 ```
 
 
 #### IAnyRepositoryBase <a name="Interfaces.IAnyRepositoryBase"></a>
 
 ```csharp
-Task<bool> AnyAsync(TId id, CancellationToken cancellationToken = default);
+bool Any(TId id);
 ```
 
 
@@ -133,7 +260,7 @@ public interface IPersistentRepositoryBase<TEntity, TId> :
 
     where TEntity : IAggregateRoot<TId>
 {
-    Task<TId> AddOrUpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
+    TId AddOrUpdate(TEntity entity);
 }
 ```
 

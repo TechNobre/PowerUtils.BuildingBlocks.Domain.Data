@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using PowerUtils.BuildingBlocks.Domain;
 
 namespace PowerUtils.BuildingBlocks.Data.Repositories
@@ -10,6 +8,6 @@ namespace PowerUtils.BuildingBlocks.Data.Repositories
 
         where TEntity : IAggregateRoot<TId>
     {
-        Task<IEnumerable<TEntity>> ListAsync(CancellationToken cancellationToken = default);
+        IEnumerable<TEntity> List();
     }
 }
