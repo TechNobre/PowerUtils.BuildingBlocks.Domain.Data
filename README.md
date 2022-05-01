@@ -30,6 +30,18 @@ Provides standard repositories for working with entities
   - [IPersistentAsyncRepositoryBase](#AsyncInterfaces.IPersistentAsyncRepositoryBase)
   - [ICRUDAsyncRepositoryBase](#AsyncInterfaces.ICRUDAsyncRepositoryBase)
   - [IReadAsyncRepositoryBase](#AsyncInterfaces.IReadAsyncRepositoryBase)
+- [Interfaces](#Interfaces)
+  - [IEntityRepositoryBase](#Interfaces.IEntityRepositoryBase)
+  - [IAddRepositoryBase](#Interfaces.IAddRepositoryBase)
+  - [IUpdateRepositoryBase](#Interfaces.IUpdateRepositoryBase)
+  - [IDeleteRepositoryBase](#Interfaces.IDeleteRepositoryBase)
+  - [IGetRepositoryBase](#Interfaces.IGetRepositoryBase)
+  - [IListRepositoryBase](#Interfaces.IListRepositoryBase)
+  - [ICountRepositoryBase](#Interfaces.ICountRepositoryBase)
+  - [IAnyRepositoryBase](#Interfaces.IAnyRepositoryBase)
+  - [IPersistentRepositoryBase](#Interfaces.IPersistentRepositoryBase)
+  - [ICRUDRepositoryBase](#Interfaces.ICRUDRepositoryBase)
+  - [IReadRepositoryBase](#Interfaces.IReadRepositoryBase)
 
 
 
@@ -165,6 +177,120 @@ public interface IReadAsyncRepositoryBase<TEntity, TId> :
     IListAsyncRepositoryBase<TEntity, TId>,
     ICountAsyncRepositoryBase<TEntity, TId>,
     IAnyAsyncRepositoryBase<TEntity, TId>
+
+    where TEntity : IAggregateRoot<TId>
+{ }
+```
+
+
+
+### Interfaces <a name="Interfaces"></a>
+**namespace:** `PowerUtils.BuildingBlocks.Data.Repositories`
+
+
+#### IEntityRepositoryBase <a name="Interfaces.IEntityRepositoryBase"></a>
+
+```csharp
+public interface IEntityRepositoryBase<TEntity, TId> :
+    IRepositoryBase
+
+    where TEntity : IAggregateRoot<TId>
+{ }
+```
+
+
+#### IAddRepositoryBase <a name="Interfaces.IAddRepositoryBase"></a>
+
+```csharp
+TId Add(TEntity entity);
+```
+
+
+#### IUpdateRepositoryBase <a name="Interfaces.IUpdateRepositoryBase"></a>
+
+```csharp
+void Update(TEntity entity);
+```
+
+
+#### IDeleteRepositoryBase <a name="Interfaces.IDeleteRepositoryBase"></a>
+
+```csharp
+void Delete(TId id);
+```
+
+
+#### IGetRepositoryBase <a name="Interfaces.IGetRepositoryBase"></a>
+
+```csharp
+TEntity GetById(TId id);
+```
+
+
+#### IListRepositoryBase <a name="Interfaces.IListRepositoryBase"></a>
+
+```csharp
+IEnumerable<TEntity> List();
+```
+
+
+#### ICountRepositoryBase <a name="Interfaces.ICountRepositoryBase"></a>
+
+```csharp
+long Count();
+```
+
+
+#### IAnyRepositoryBase <a name="Interfaces.IAnyRepositoryBase"></a>
+
+```csharp
+bool Any(TId id);
+```
+
+
+#### IPersistentRepositoryBase <a name="Interfaces.IPersistentRepositoryBase"></a>
+
+```csharp
+public interface IPersistentRepositoryBase<TEntity, TId> :
+    IEntityRepositoryBase<TEntity, TId>,
+
+    IAddRepositoryBase<TEntity, TId>,
+    IUpdateRepositoryBase<TEntity, TId>,
+    IDeleteRepositoryBase<TEntity, TId>
+
+    where TEntity : IAggregateRoot<TId>
+{
+    TId AddOrUpdate(TEntity entity);
+}
+```
+
+
+#### ICRUDRepositoryBase <a name="Interfaces.ICRUDRepositoryBase"></a>
+
+```csharp
+public interface ICRUDRepositoryBase<TEntity, TId> :
+    IEntityRepositoryBase<TEntity, TId>,
+
+    IAddRepositoryBase<TEntity, TId>,
+    IGetRepositoryBase<TEntity, TId>,
+    IUpdateRepositoryBase<TEntity, TId>,
+    IDeleteRepositoryBase<TEntity, TId>
+
+    where TEntity : IAggregateRoot<TId>
+{ }
+```
+
+
+#### IReadRepositoryBase <a name="Interfaces.IReadRepositoryBase"></a>
+
+```csharp
+public interface IReadRepositoryBase<TEntity, TId> :
+    IEntityRepositoryBase<TEntity, TId>,
+
+    IGetRepositoryBase<TEntity, TId>,
+    IListRepositoryBase<TEntity, TId>,
+    ICountRepositoryBase<TEntity, TId>,
+    IAnyRepositoryBase<TEntity, TId>
 
     where TEntity : IAggregateRoot<TId>
 { }

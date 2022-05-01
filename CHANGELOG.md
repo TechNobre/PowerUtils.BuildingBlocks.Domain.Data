@@ -10,6 +10,7 @@
 ### Breaking Changes
 - Added "Async" word in interfaces for async methods;
 - Named the namespace for async method from `PowerUtils.BuildingBlocks.Data.Repositories` to `PowerUtils.BuildingBlocks.Data.AsyncRepositories`;
+- Created new interfaces for non-async methods;
 
 
 
