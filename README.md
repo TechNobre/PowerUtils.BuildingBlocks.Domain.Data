@@ -18,18 +18,18 @@ Provides standard repositories for working with entities
 
 ## Features
 
-- [Interfaces](#Interfaces)
-  - [IEntityRepositoryBase](#Interfaces.IEntityRepositoryBase)
-  - [IAddRepositoryBase](#Interfaces.IAddRepositoryBase)
-  - [IUpdateRepositoryBase](#Interfaces.IUpdateRepositoryBase)
-  - [IDeleteRepositoryBase](#Interfaces.IDeleteRepositoryBase)
-  - [IGetRepositoryBase](#Interfaces.IGetRepositoryBase)
-  - [IListRepositoryBase](#Interfaces.IListRepositoryBase)
-  - [ICountRepositoryBase](#Interfaces.ICountRepositoryBase)
-  - [IAnyRepositoryBase](#Interfaces.IAnyRepositoryBase)
-  - [IPersistentRepositoryBase](#Interfaces.IPersistentRepositoryBase)
-  - [ICRUDRepositoryBase](#Interfaces.ICRUDRepositoryBase)
-  - [IReadRepositoryBase](#Interfaces.IReadRepositoryBase)
+- [AsyncInterfaces](#AsyncInterfaces)
+  - [IEntityAsyncRepositoryBase](#AsyncInterfaces.IEntityAsyncRepositoryBase)
+  - [IAddAsyncRepositoryBase](#AsyncInterfaces.IAddAsyncRepositoryBase)
+  - [IUpdateAsyncRepositoryBase](#AsyncInterfaces.IUpdateAsyncRepositoryBase)
+  - [IDeleteAsyncRepositoryBase](#AsyncInterfaces.IDeleteAsyncRepositoryBase)
+  - [IGetAsyncRepositoryBase](#AsyncInterfaces.IGetAsyncRepositoryBase)
+  - [IListAsyncRepositoryBase](#AsyncInterfaces.IListAsyncRepositoryBase)
+  - [ICountAsyncRepositoryBase](#AsyncInterfaces.ICountAsyncRepositoryBase)
+  - [IAnyAsyncRepositoryBase](#AsyncInterfaces.IAnyAsyncRepositoryBase)
+  - [IPersistentAsyncRepositoryBase](#AsyncInterfaces.IPersistentAsyncRepositoryBase)
+  - [ICRUDAsyncRepositoryBase](#AsyncInterfaces.ICRUDAsyncRepositoryBase)
+  - [IReadAsyncRepositoryBase](#AsyncInterfaces.IReadAsyncRepositoryBase)
 
 
 
@@ -58,13 +58,13 @@ dotnet add package PowerUtils.BuildingBlocks.Domain.Data
 
 
 
-### Interfaces <a name="Interfaces"></a>
+### AsyncInterfaces <a name="AsyncInterfaces"></a>
 
 
-#### IEntityRepositoryBase <a name="Interfaces.IEntityRepositoryBase"></a>
+#### IEntityAsyncRepositoryBase <a name="AsyncInterfaces.IEntityAsyncRepositoryBase"></a>
 
 ```csharp
-public interface IEntityRepositoryBase<TEntity, TId> :
+public interface IEntityAsyncRepositoryBase<TEntity, TId> :
     IRepositoryBase
 
     where TEntity : IAggregateRoot<TId>
@@ -72,64 +72,64 @@ public interface IEntityRepositoryBase<TEntity, TId> :
 ```
 
 
-#### IAddRepositoryBase <a name="Interfaces.IAddRepositoryBase"></a>
+#### IAddAsyncRepositoryBase <a name="AsyncInterfaces.IAddAsyncRepositoryBase"></a>
 
 ```csharp
 Task<TId> AddAsync(TEntity entity, CancellationToken cancellationToken = default);
 ```
 
 
-#### IUpdateRepositoryBase <a name="Interfaces.IUpdateRepositoryBase"></a>
+#### IUpdateAsyncRepositoryBase <a name="AsyncInterfaces.IUpdateAsyncRepositoryBase"></a>
 
 ```csharp
 Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
 ```
 
 
-#### IDeleteRepositoryBase <a name="Interfaces.IDeleteRepositoryBase"></a>
+#### IDeleteAsyncRepositoryBase <a name="AsyncInterfaces.IDeleteAsyncRepositoryBase"></a>
 
 ```csharp
 Task DeleteAsync(TId id, CancellationToken cancellationToken = default);
 ```
 
 
-#### IGetRepositoryBase <a name="Interfaces.IGetRepositoryBase"></a>
+#### IGetAsyncRepositoryBase <a name="AsyncInterfaces.IGetAsyncRepositoryBase"></a>
 
 ```csharp
 Task<TEntity> GetByIdAsync(TId id, CancellationToken cancellationToken = default);
 ```
 
 
-#### IListRepositoryBase <a name="Interfaces.IListRepositoryBase"></a>
+#### IListAsyncRepositoryBase <a name="AsyncInterfaces.IListAsyncRepositoryBase"></a>
 
 ```csharp
 Task<IEnumerable<TEntity>> ListAsync(CancellationToken cancellationToken = default);
 ```
 
 
-#### ICountRepositoryBase <a name="Interfaces.ICountRepositoryBase"></a>
+#### ICountAsyncRepositoryBase <a name="AsyncInterfaces.ICountAsyncRepositoryBase"></a>
 
 ```csharp
 Task<long> CountAsync(CancellationToken cancellationToken = default);
 ```
 
 
-#### IAnyRepositoryBase <a name="Interfaces.IAnyRepositoryBase"></a>
+#### IAnyAsyncRepositoryBase <a name="AsyncInterfaces.IAnyAsyncRepositoryBase"></a>
 
 ```csharp
 Task<bool> AnyAsync(TId id, CancellationToken cancellationToken = default);
 ```
 
 
-#### IPersistentRepositoryBase <a name="Interfaces.IPersistentRepositoryBase"></a>
+#### IPersistentAsyncRepositoryBase <a name="AsyncInterfaces.IPersistentAsyncRepositoryBase"></a>
 
 ```csharp
-public interface IPersistentRepositoryBase<TEntity, TId> :
-    IEntityRepositoryBase<TEntity, TId>,
+public interface IPersistentAsyncRepositoryBase<TEntity, TId> :
+    IEntityAsyncRepositoryBase<TEntity, TId>,
 
-    IAddRepositoryBase<TEntity, TId>,
-    IUpdateRepositoryBase<TEntity, TId>,
-    IDeleteRepositoryBase<TEntity, TId>
+    IAddAsyncRepositoryBase<TEntity, TId>,
+    IUpdateAsyncRepositoryBase<TEntity, TId>,
+    IDeleteAsyncRepositoryBase<TEntity, TId>
 
     where TEntity : IAggregateRoot<TId>
 {
@@ -138,32 +138,32 @@ public interface IPersistentRepositoryBase<TEntity, TId> :
 ```
 
 
-#### ICRUDRepositoryBase <a name="Interfaces.ICRUDRepositoryBase"></a>
+#### ICRUDAsyncRepositoryBase <a name="AsyncInterfaces.ICRUDAsyncRepositoryBase"></a>
 
 ```csharp
-public interface ICRUDRepositoryBase<TEntity, TId> :
-    IEntityRepositoryBase<TEntity, TId>,
+public interface ICRUDAsyncRepositoryBase<TEntity, TId> :
+    IEntityAsyncRepositoryBase<TEntity, TId>,
 
-    IAddRepositoryBase<TEntity, TId>,
-    IGetRepositoryBase<TEntity, TId>,
-    IUpdateRepositoryBase<TEntity, TId>,
-    IDeleteRepositoryBase<TEntity, TId>
+    IAddAsyncRepositoryBase<TEntity, TId>,
+    IGetAsyncRepositoryBase<TEntity, TId>,
+    IUpdateAsyncRepositoryBase<TEntity, TId>,
+    IDeleteAsyncRepositoryBase<TEntity, TId>
 
     where TEntity : IAggregateRoot<TId>
 { }
 ```
 
 
-#### IReadRepositoryBase <a name="Interfaces.IReadRepositoryBase"></a>
+#### IReadAsyncRepositoryBase <a name="AsyncInterfaces.IReadAsyncRepositoryBase"></a>
 
 ```csharp
-public interface IReadRepositoryBase<TEntity, TId> :
-    IEntityRepositoryBase<TEntity, TId>,
+public interface IReadAsyncRepositoryBase<TEntity, TId> :
+    IEntityAsyncRepositoryBase<TEntity, TId>,
 
-    IGetRepositoryBase<TEntity, TId>,
-    IListRepositoryBase<TEntity, TId>,
-    ICountRepositoryBase<TEntity, TId>,
-    IAnyRepositoryBase<TEntity, TId>
+    IGetAsyncRepositoryBase<TEntity, TId>,
+    IListAsyncRepositoryBase<TEntity, TId>,
+    ICountAsyncRepositoryBase<TEntity, TId>,
+    IAnyAsyncRepositoryBase<TEntity, TId>
 
     where TEntity : IAggregateRoot<TId>
 { }

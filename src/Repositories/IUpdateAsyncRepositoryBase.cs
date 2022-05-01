@@ -4,8 +4,8 @@ using PowerUtils.BuildingBlocks.Domain;
 
 namespace PowerUtils.BuildingBlocks.Data.Repositories
 {
-    public interface IUpdateRepositoryBase<TEntity, TId> :
-        IEntityRepositoryBase<TEntity, TId>
+    public interface IUpdateAsyncRepositoryBase<TEntity, TId> :
+        IEntityAsyncRepositoryBase<TEntity, TId>
 
         where TEntity : IAggregateRoot<TId>
     {

@@ -2,7 +2,7 @@
 
 namespace PowerUtils.BuildingBlocks.Data.Repositories
 {
-    public interface IEntityRepositoryBase<TEntity, TId> :
+    public interface IEntityAsyncRepositoryBase<TEntity, TId> :
         IRepositoryBase
 
         where TEntity : IAggregateRoot<TId>

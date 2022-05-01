@@ -4,11 +4,11 @@ using PowerUtils.BuildingBlocks.Domain;
 
 namespace PowerUtils.BuildingBlocks.Data.Repositories
 {
-    public interface IDeleteRepositoryBase<TEntity, TId> :
-        IEntityRepositoryBase<TEntity, TId>
+    public interface ICountAsyncRepositoryBase<TEntity, TId> :
+        IEntityAsyncRepositoryBase<TEntity, TId>
 
         where TEntity : IAggregateRoot<TId>
     {
-        Task DeleteAsync(TId id, CancellationToken cancellationToken = default);
+        Task<long> CountAsync(CancellationToken cancellationToken = default);
     }
 }
