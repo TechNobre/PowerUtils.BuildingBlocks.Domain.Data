@@ -59,6 +59,7 @@ dotnet add package PowerUtils.BuildingBlocks.Domain.Data
 
 
 ### AsyncInterfaces <a name="AsyncInterfaces"></a>
+**namespace:** `PowerUtils.BuildingBlocks.Data.AsyncRepositories`
 
 
 #### IEntityAsyncRepositoryBase <a name="AsyncInterfaces.IEntityAsyncRepositoryBase"></a>

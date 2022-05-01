@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using PowerUtils.BuildingBlocks.Domain;
 
-namespace PowerUtils.BuildingBlocks.Data.Repositories
+namespace PowerUtils.BuildingBlocks.Data.AsyncRepositories
 {
     public interface IListAsyncRepositoryBase<TEntity, TId> :
         IEntityAsyncRepositoryBase<TEntity, TId>

@@ -1,6 +1,6 @@
 ﻿using PowerUtils.BuildingBlocks.Domain;
 
-namespace PowerUtils.BuildingBlocks.Data.Repositories
+namespace PowerUtils.BuildingBlocks.Data.AsyncRepositories
 {
     public interface IReadAsyncRepositoryBase<TEntity, TId> :
         IGetAsyncRepositoryBase<TEntity, TId>,

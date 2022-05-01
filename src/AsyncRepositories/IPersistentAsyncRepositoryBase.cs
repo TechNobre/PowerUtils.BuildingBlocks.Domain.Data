@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using PowerUtils.BuildingBlocks.Domain;
 
-namespace PowerUtils.BuildingBlocks.Data.Repositories
+namespace PowerUtils.BuildingBlocks.Data.AsyncRepositories
 {
     public interface IPersistentAsyncRepositoryBase<TEntity, TId> :
         IAddAsyncRepositoryBase<TEntity, TId>,
