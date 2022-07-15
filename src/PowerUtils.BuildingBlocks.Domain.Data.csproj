@@ -71,8 +71,8 @@
 
 
   <ItemGroup>
-    <PackageReference Include="PowerUtils.BuildingBlocks.Data" Version="1.0.0" />
-    <PackageReference Include="PowerUtils.BuildingBlocks.Domain" Version="1.0.0" />
+    <PackageReference Include="PowerUtils.BuildingBlocks.Data" Version="1.1.0" />
+    <PackageReference Include="PowerUtils.BuildingBlocks.Domain" Version="1.2.0" />
   </ItemGroup>
 
 
