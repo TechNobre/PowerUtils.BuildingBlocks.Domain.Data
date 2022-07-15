@@ -1,5 +1,8 @@
 # PowerUtils.BuildingBlocks.Domain.Data
-Provides standard repositories for working with entities
+
+![Logo](https://raw.githubusercontent.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/main/assets/logo/logo_128x128.png)
+
+***Provides standard repositories for working with entities***
 
 ![Tests](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/actions/workflows/test-project.yml/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.BuildingBlocks.Domain.Data&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.BuildingBlocks.Domain.Data)
@@ -9,53 +12,56 @@ Provides standard repositories for working with entities
 [![License: MIT](https://img.shields.io/github/license/TechNobre/PowerUtils.BuildingBlocks.Domain.Data.svg)](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/blob/main/LICENSE)
 
 
+- [Support](#support-to)
+- [Dependencies](#dependencies)
+- [How to use](#how-to-use)
+  - [Installation](#installation)
+  - [AsyncInterfaces](#AsyncInterfaces)
+    - [IEntityAsyncRepositoryBase](#AsyncInterfaces.IEntityAsyncRepositoryBase)
+    - [IAddAsyncRepositoryBase](#AsyncInterfaces.IAddAsyncRepositoryBase)
+    - [IUpdateAsyncRepositoryBase](#AsyncInterfaces.IUpdateAsyncRepositoryBase)
+    - [IDeleteAsyncRepositoryBase](#AsyncInterfaces.IDeleteAsyncRepositoryBase)
+    - [IGetAsyncRepositoryBase](#AsyncInterfaces.IGetAsyncRepositoryBase)
+    - [IListAsyncRepositoryBase](#AsyncInterfaces.IListAsyncRepositoryBase)
+    - [ICountAsyncRepositoryBase](#AsyncInterfaces.ICountAsyncRepositoryBase)
+    - [IAnyAsyncRepositoryBase](#AsyncInterfaces.IAnyAsyncRepositoryBase)
+    - [IPersistentAsyncRepositoryBase](#AsyncInterfaces.IPersistentAsyncRepositoryBase)
+    - [ICRUDAsyncRepositoryBase](#AsyncInterfaces.ICRUDAsyncRepositoryBase)
+    - [IReadAsyncRepositoryBase](#AsyncInterfaces.IReadAsyncRepositoryBase)
+  - [Interfaces](#Interfaces)
+    - [IEntityRepositoryBase](#Interfaces.IEntityRepositoryBase)
+    - [IAddRepositoryBase](#Interfaces.IAddRepositoryBase)
+    - [IUpdateRepositoryBase](#Interfaces.IUpdateRepositoryBase)
+    - [IDeleteRepositoryBase](#Interfaces.IDeleteRepositoryBase)
+    - [IGetRepositoryBase](#Interfaces.IGetRepositoryBase)
+    - [IListRepositoryBase](#Interfaces.IListRepositoryBase)
+    - [ICountRepositoryBase](#Interfaces.ICountRepositoryBase)
+    - [IAnyRepositoryBase](#Interfaces.IAnyRepositoryBase)
+    - [IPersistentRepositoryBase](#Interfaces.IPersistentRepositoryBase)
+    - [ICRUDRepositoryBase](#Interfaces.ICRUDRepositoryBase)
+    - [IReadRepositoryBase](#Interfaces.IReadRepositoryBase)
+- [Contribution](#contribution)
+- [License](./LICENSE)
+- [Changelog](./CHANGELOG.md)
 
-## Support to
+
+
+## Support to <a name="support-to"></a>
 - .NET 3.1 or more
 - .NET Standard 2.1
 
 
 
-## Features
-
-- [AsyncInterfaces](#AsyncInterfaces)
-  - [IEntityAsyncRepositoryBase](#AsyncInterfaces.IEntityAsyncRepositoryBase)
-  - [IAddAsyncRepositoryBase](#AsyncInterfaces.IAddAsyncRepositoryBase)
-  - [IUpdateAsyncRepositoryBase](#AsyncInterfaces.IUpdateAsyncRepositoryBase)
-  - [IDeleteAsyncRepositoryBase](#AsyncInterfaces.IDeleteAsyncRepositoryBase)
-  - [IGetAsyncRepositoryBase](#AsyncInterfaces.IGetAsyncRepositoryBase)
-  - [IListAsyncRepositoryBase](#AsyncInterfaces.IListAsyncRepositoryBase)
-  - [ICountAsyncRepositoryBase](#AsyncInterfaces.ICountAsyncRepositoryBase)
-  - [IAnyAsyncRepositoryBase](#AsyncInterfaces.IAnyAsyncRepositoryBase)
-  - [IPersistentAsyncRepositoryBase](#AsyncInterfaces.IPersistentAsyncRepositoryBase)
-  - [ICRUDAsyncRepositoryBase](#AsyncInterfaces.ICRUDAsyncRepositoryBase)
-  - [IReadAsyncRepositoryBase](#AsyncInterfaces.IReadAsyncRepositoryBase)
-- [Interfaces](#Interfaces)
-  - [IEntityRepositoryBase](#Interfaces.IEntityRepositoryBase)
-  - [IAddRepositoryBase](#Interfaces.IAddRepositoryBase)
-  - [IUpdateRepositoryBase](#Interfaces.IUpdateRepositoryBase)
-  - [IDeleteRepositoryBase](#Interfaces.IDeleteRepositoryBase)
-  - [IGetRepositoryBase](#Interfaces.IGetRepositoryBase)
-  - [IListRepositoryBase](#Interfaces.IListRepositoryBase)
-  - [ICountRepositoryBase](#Interfaces.ICountRepositoryBase)
-  - [IAnyRepositoryBase](#Interfaces.IAnyRepositoryBase)
-  - [IPersistentRepositoryBase](#Interfaces.IPersistentRepositoryBase)
-  - [ICRUDRepositoryBase](#Interfaces.ICRUDRepositoryBase)
-  - [IReadRepositoryBase](#Interfaces.IReadRepositoryBase)
-
-
-
-## Documentation
-
-### Dependencies
+## Dependencies <a name="dependencies"></a>
 
 - PowerUtils.BuildingBlocks.Domain [NuGet](https://www.nuget.org/packages/PowerUtils.BuildingBlocks.Domain/)
 - PowerUtils.BuildingBlocks.Data [NuGet](https://www.nuget.org/packages/PowerUtils.BuildingBlocks.Data/)
 
 
-### How to use
 
-#### Install NuGet package
+## How to use <a name="how-to-use"></a>
+
+### Install NuGet package <a name="installation"></a>
 This package is available through Nuget Packages: https://www.nuget.org/packages/PowerUtils.BuildingBlocks.Domain.Data
 
 **Nuget**
@@ -298,18 +304,6 @@ public interface IReadRepositoryBase<TEntity, TId> :
 
 
 
-## Contribution
+## Contribution <a name="contribution"></a>
 
-*Help me to help others*
-
-
-
-## LICENSE
-
-[MIT](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/blob/main/LICENSE)
-
-
-
-## Changelog
-
-[Here](./CHANGELOG.md)
+If you have any questions, comments, or suggestions, please open an [issue](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/issues/new/choose) or create a [pull request](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/compare)
