@@ -20,6 +20,7 @@
     - [IEntityAsyncRepositoryBase](#AsyncInterfaces.IEntityAsyncRepositoryBase)
     - [IAddAsyncRepositoryBase](#AsyncInterfaces.IAddAsyncRepositoryBase)
     - [IUpdateAsyncRepositoryBase](#AsyncInterfaces.IUpdateAsyncRepositoryBase)
+    - [IUpsertAsyncRepositoryBase](#AsyncInterfaces.IUpsertAsyncRepositoryBase)
     - [IDeleteAsyncRepositoryBase](#AsyncInterfaces.IDeleteAsyncRepositoryBase)
     - [IGetAsyncRepositoryBase](#AsyncInterfaces.IGetAsyncRepositoryBase)
     - [IListAsyncRepositoryBase](#AsyncInterfaces.IListAsyncRepositoryBase)
@@ -32,6 +33,7 @@
     - [IEntityRepositoryBase](#Interfaces.IEntityRepositoryBase)
     - [IAddRepositoryBase](#Interfaces.IAddRepositoryBase)
     - [IUpdateRepositoryBase](#Interfaces.IUpdateRepositoryBase)
+    - [IUpsertRepositoryBase](#Interfaces.IUpsertRepositoryBase)
     - [IDeleteRepositoryBase](#Interfaces.IDeleteRepositoryBase)
     - [IGetRepositoryBase](#Interfaces.IGetRepositoryBase)
     - [IListRepositoryBase](#Interfaces.IListRepositoryBase)
@@ -47,8 +49,9 @@
 
 
 ## Support to <a name="support-to"></a>
-- .NET 3.1 or more
-- .NET Standard 2.1
+- .NET 6.0
+- .NET 5.0
+- .NET 3.1
 
 
 
@@ -102,6 +105,13 @@ Task<TId> AddAsync(TEntity entity, CancellationToken cancellationToken = default
 
 ```csharp
 Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
+```
+
+
+#### IUpsertAsyncRepositoryBase <a name="AsyncInterfaces.IUpsertAsyncRepositoryBase"></a>
+
+```csharp
+Task<TId> UpsertAsync(TEntity entity, CancellationToken cancellationToken = default);
 ```
 
 
@@ -216,6 +226,13 @@ TId Add(TEntity entity);
 
 ```csharp
 void Update(TEntity entity);
+```
+
+
+#### IUpsertRepositoryBase <a name="Interfaces.IUpsertRepositoryBase"></a>
+
+```csharp
+TId Upsert(TEntity entity);
 ```
 
 
