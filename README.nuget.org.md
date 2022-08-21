@@ -1,4 +1,4 @@
-***Utils, helpers and extensions to work with globalization***
+***Provides standard repositories for working with entities***
 
 ![Tests](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/actions/workflows/tests.yml/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.BuildingBlocks.Domain.Data&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.BuildingBlocks.Domain.Data)
