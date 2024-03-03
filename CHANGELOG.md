@@ -1,3 +1,15 @@
+# [4.0.0](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/compare/v3.0.0...v4.0.0) (2024-03-03)
+
+
+### Bug Fixes
+
+* Marked all implementations as `Obsolete` ([7dd6621](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/commit/7dd6621476bddcc8e2b12eb243a46cc0a0c28e69))
+
+
+### BREAKING CHANGES
+
+* Deprecated package
+
 # [3.0.0](https://github.com/TechNobre/PowerUtils.BuildingBlocks.Domain.Data/compare/v2.1.0...v3.0.0) (2022-08-21)
 
 
